@@ -1,4 +1,4 @@
-Copyright (c) 2013 Chris Kalafarski
+Copyright (c) 2013 PRX, Inc.
 
 MIT License
 
