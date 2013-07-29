@@ -35,7 +35,7 @@ module FeedzirraPodcast
       end
 
       def enclosure
-        Struct.new(:url, :type, :length).new(enclosure_url, enclosure_length.try(:to_f), enclosure_type)
+        Struct.new(:url, :length, :type).new(enclosure_url, enclosure_length.try(:to_f), enclosure_type)
       end
     end
   end
