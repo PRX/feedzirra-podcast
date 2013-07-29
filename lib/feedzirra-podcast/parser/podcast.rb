@@ -27,6 +27,10 @@ module FeedzirraPodcast
       # element :"sy:updateFrequency"
       # element :"sy:updateBase"
 
+      # Misc
+
+      element :issn
+
       def itunes_explicit
         case itunes_explicit_string
         when "yes"
