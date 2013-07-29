@@ -1,6 +1,6 @@
 require 'minitest/spec'
 require 'minitest/autorun'
-require 'feedzirra-podcast/parser'
+require 'feedzirra-podcast'
 
 class PodcastItemTest < MiniTest::Unit::TestCase
   def setup
