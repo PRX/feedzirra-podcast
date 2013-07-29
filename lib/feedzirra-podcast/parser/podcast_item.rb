@@ -15,7 +15,7 @@ module FeedzirraPodcast
       element :"itunes:image", as: :itunes_image, value: :href
 
       element :"itunes:block", as: :itunes_block_string
-      element :"itunes:itunes:isClosedCaptioned", as: :itunes_is_closed_captioned_string
+      element :"itunes:isClosedCaptioned", as: :itunes_is_closed_captioned_string
       element :"itunes:order", as: :itunes_order_string
 
       # DC
