@@ -13,7 +13,7 @@ module FeedzirraPodcast
 
       element :link
       element :author
-      element :pubDate, as: :pubDateString
+      element :pubDate, as: :pub_date_string
       element :source, as: :source_title
       element :source, as: :source_url, value: :url
       elements :category, as: :categories
@@ -25,7 +25,7 @@ module FeedzirraPodcast
       element :comments
 
       def pubDate
-        Time.parse(pubDateString).utc if pubDateString.present?
+        Time.parse(pub_date_string).utc if pub_date_string.present?
       rescue ArgumentError
         nil
       end
