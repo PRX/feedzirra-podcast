@@ -37,7 +37,11 @@ Awesome people saying nice things:
       <link>http://99percentinvisible.org</link>
     </image>
     <itunes:category text="Arts">
-      <itunes:category text="Design" />
+      <itunes:category text="Painting" />
+    </itunes:category>
+    <itunes:category text="Design" />
+    <itunes:category text="Music">
+      <itunes:category text="Technology" />
     </itunes:category>
     <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.99percentinvisible.org/99percentinvisible" />
     <feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="99percentinvisible" />

@@ -35,4 +35,8 @@ class PodcastChannelTest < MiniTest::Unit::TestCase
     assert_equal Time.parse('2012-01-01T02:00:00+00:00'), @feed.sy_update_base
     assert_equal Time.parse('2012-01-01T02:00:00+00:00'), @feed.sy_updateBase
   end
+
+  def test_itunes_categories
+    assert_equal 1, @feed.itunes_categories
+  end
 end
