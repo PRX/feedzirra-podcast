@@ -22,4 +22,8 @@ class PodcastItemTest < MiniTest::Unit::TestCase
     assert_equal 'no', @item.itunes_explicit_string
     assert_equal false, @item.itunes_explicit
   end
+
+  def test_closed_captioned
+    assert_equal false, @item.itunes_is_closed_captioned
+  end
 end
