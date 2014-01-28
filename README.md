@@ -93,3 +93,6 @@ When it makes sense for an element's value to be parsed or tranformed into a non
 
 	<comments>			item.comments
 
+### Helpers
+
+The `feedburner?` method on feed objects will try to tell you if the feed been proxied by Feedburner
