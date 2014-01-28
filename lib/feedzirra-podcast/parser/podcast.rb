@@ -13,7 +13,7 @@ module FeedzirraPodcast
       element :"itunes:explicit", as: :itunes_explicit_string
       element :"itunes:subtitle", as: :itunes_subtitle
       element :"itunes:summary", as: :itunes_summary
-      elements :"itunes:category", as: :itunes_categories, value: :text
+      # elements :"itunes:category", as: :itunes_categories, value: :text
       element :"itunes:image", as: :itunes_image, value: :href
       element :"itunes:keywords", as: :itunes_keywords_string
 
