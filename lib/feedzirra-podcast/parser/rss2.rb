@@ -49,16 +49,29 @@ module FeedzirraPodcast
       rescue ArgumentError
         nil
       end
+      alias_method :pub_date, :pubDate
+      alias_method :pubdate, :pubDate
 
       def lastBuildDate
         Time.parse(last_build_date_string).utc if last_build_date_string.present?
       rescue ArgumentError
         nil
       end
+      alias_method :last_build_date, :lastBuildDate
 
       def feedburner?
         !!feedburner_info_xmlns || !!feedburner_info_uri
       end
+
+      def managing_editor
+        managingEditor
+      end
+      alias_method :managingeditor, :managing_editor
+
+      def web_master
+        webMaster
+      end
+      alias_method :webmaster, :web_master
     end
   end
 end
