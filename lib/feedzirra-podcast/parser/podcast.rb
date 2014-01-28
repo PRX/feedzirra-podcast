@@ -14,7 +14,7 @@ module FeedzirraPodcast
       element :"itunes:subtitle", as: :itunes_subtitle
       element :"itunes:summary", as: :itunes_summary
       # elements :"itunes:category", as: :itunes_categories, value: :text
-      element :"itunes:image", as: :itunes_image, value: :href
+      element :"itunes:image", as: :itunes_image_href, value: :href
       element :"itunes:keywords", as: :itunes_keywords_string
 
       element :"itunes:block", as: :itunes_block_string
@@ -36,6 +36,10 @@ module FeedzirraPodcast
         _email = itunes_owner_object ? itunes_owner_object.email : nil
         _name = itunes_owner_object ? itunes_owner_object.name : nil
         Struct.new(:email, :name).new(_email, _name)
+      end
+
+      def itunes_image
+        Struct.new(:href).new(itunes_image_href)
       end
 
       def itunes_explicit

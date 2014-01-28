@@ -64,7 +64,7 @@ When an element has children, such as `itunes:owner`, you can safely call the ch
 						feed.itunes_explicit_string
 	<itunes:subtitle> 	feed.itunes_subtitle
 	<itunes:summary> 	feed.itunes_summary
-	<itunes:image href>	feed.itunes_image
+	<itunes:image href>	feed.itunes_image.href
 	<itunes:keywords> 	feed.itunes_keywords (Array of Strings)
 						feed.itunes_keywords_string
 
@@ -116,7 +116,7 @@ When an element has children, such as `itunes:owner`, you can safely call the ch
 						feed.itunes_duration_string (String)
 	<itunes:keywords> 	feed.itunes_keywords (Array of Strings)
 						feed.itunes_keywords_string
-	<itunes:image href>	feed.itunes_image
+	<itunes:image href>	feed.itunes_image.href
 	<itunes:block>	 	feed.itunes_block (true, false)
 						feed.itunes_block_string
 	<itunes:isClosedCaptioned>	feed.itunes_is_closed_captioned (Boolean)

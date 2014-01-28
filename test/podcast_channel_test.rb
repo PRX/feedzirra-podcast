@@ -36,6 +36,11 @@ class PodcastChannelTest < MiniTest::Unit::TestCase
     assert_equal Time.parse('2012-01-01T02:00:00+00:00'), @feed.sy_updateBase
   end
 
+  def test_itunes_image
+    url = 'http://cdn.99percentinvisible.org/wp-content/uploads/powerpress/99invisible-logo-1400.jpg'
+    assert_equal url, @feed.itunes_image.href
+  end
+
   def test_itunes_categories
     # assert_equal 1, @feed.itunes_categories
   end

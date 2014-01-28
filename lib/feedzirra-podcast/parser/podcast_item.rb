@@ -12,7 +12,7 @@ module FeedzirraPodcast
       element :"itunes:explicit", as: :itunes_explicit_string
       element :"itunes:duration", as: :itunes_duration_string
       element :"itunes:keywords", as: :itunes_keywords_string
-      element :"itunes:image", as: :itunes_image, value: :href
+      element :"itunes:image", as: :itunes_image_href, value: :href
 
       element :"itunes:block", as: :itunes_block_string
       element :"itunes:isClosedCaptioned", as: :itunes_is_closed_captioned_string
@@ -39,6 +39,10 @@ module FeedzirraPodcast
         else
           false
         end
+      end
+
+      def itunes_image
+        Struct.new(:href).new(itunes_image_href)
       end
 
       def itunes_duration
