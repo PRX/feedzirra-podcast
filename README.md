@@ -64,6 +64,7 @@ When an element has children, such as `itunes:owner`, you can safely call the ch
 						feed.itunes_explicit_string
 	<itunes:subtitle> 	feed.itunes_subtitle
 	<itunes:summary> 	feed.itunes_summary
+	<itunes:image href>	feed.itunes_image
 	<itunes:keywords> 	feed.itunes_keywords (Array of Strings)
 						feed.itunes_keywords_string
 
@@ -105,6 +106,25 @@ When an element has children, such as `itunes:owner`, you can safely call the ch
 	<dc:modified>		item.dc_modified (Time)
 	<dc:replaces>		item.dc_replaces
 	<dc:isReplacedBy>	item.dc_isReplacedBy
+	
+	<itunes:author>		feed.itunes_author
+	<itunes:subtitle> 	feed.itunes_subtitle
+	<itunes:summary> 	feed.itunes_summary
+	<itunes:explicit> 	feed.itunes_explicit (true, false, :clean)
+						feed.itunes_explicit_string
+	<itunes:duration>	feed.itunes_duration (Number)
+						feed.itunes_duration_string (String)
+	<itunes:keywords> 	feed.itunes_keywords (Array of Strings)
+						feed.itunes_keywords_string
+	<itunes:image href>	feed.itunes_image
+	<itunes:block>	 	feed.itunes_block (true, false)
+						feed.itunes_block_string
+	<itunes:isClosedCaptioned>	feed.itunes_is_closed_captioned (Boolean)
+						feed.itunes_is_closed_captioned_string
+	<itunes:order>		feed.itunes_order (Float)
+						feed.itunes_order_string (String)
+	
+	<content:encoded>	item.content_encoded	
 
 ### Helpers
 
