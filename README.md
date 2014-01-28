@@ -18,7 +18,7 @@ If you want to avoid potential conflicts, you can directly pass feeds to the pod
 
 ## Usage
 
-The parser attempts to match the structure and naming conventions of the actual feed XML elements as closely as possible. `<link>` tags are accessed through `item.link`, etc.
+The parser attempts to match the structure and naming conventions of the actual feed XML elements as closely as possible. `<link>` tags are accessed through `item.link`, etc. Some elements, such as `pubDate`, can be accessed with methods that match the element, or aliases that better adhere to ruby naming conventions (e.g. `pub_date`).
 
 The goal is to support all elements common to podcast feeds. Currently not all elements are supported; as they are added, they will be listed below.
 

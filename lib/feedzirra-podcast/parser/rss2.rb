@@ -21,7 +21,7 @@ module FeedzirraPodcast
       element :pubDate, as: :pub_date_string
       element :lastBuildDate, as: :last_build_date_string
       elements :category, as: :categories
-      element :image, class: FeedzirraPodcast::Parser::RSS2ChannelImage
+      element :image, as: :image_object, class: FeedzirraPodcast::Parser::RSS2ChannelImage
       element :docs
 
       element :generator
@@ -42,6 +42,17 @@ module FeedzirraPodcast
 
       def self.able_to_parse?(xml) #:nodoc:
         (/\<rss|\<rdf/ =~ xml)
+      end
+
+      def image
+        _url = image_object ? image_object.url : nil
+        _title = image_object ? image_object.title : nil
+        _link = image_object ? image_object.link : nil
+        _width = image_object ? image_object.width : nil
+        _height = image_object ? image_object.height : nil
+        _description = image_object ? image_object.description : nil
+
+        Struct.new(:url, :title, :link, :width, :height, :description).new(_url, _title, _link, _width, _height, _description)
       end
 
       def pubDate

@@ -9,7 +9,7 @@ module FeedzirraPodcast
       # iTunes
 
       element :"itunes:author", as: :itunes_author
-      element :"itunes:owner", as: :itunes_owner, class: ItunesOwner
+      element :"itunes:owner", as: :itunes_owner_object, class: ItunesOwner
       element :"itunes:explicit", as: :itunes_explicit_string
       element :"itunes:subtitle", as: :itunes_subtitle
       element :"itunes:summary", as: :itunes_summary
@@ -30,6 +30,12 @@ module FeedzirraPodcast
       # Misc
 
       element :issn
+
+      def itunes_owner
+        _email = itunes_owner_object ? itunes_owner_object.email : nil
+        _name = itunes_owner_object ? itunes_owner_object.name : nil
+        Struct.new(:email, :name).new(_email, _name)
+      end
 
       def itunes_explicit
         case itunes_explicit_string

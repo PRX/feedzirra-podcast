@@ -15,4 +15,9 @@ class RSSChannelTest < MiniTest::Unit::TestCase
   def test_feedburner
     assert_equal true, @feed.feedburner?
   end
+
+  def test_image
+    assert_equal '99% Invisible', @feed.image.title
+    assert_equal nil, @feed.image.width
+  end
 end

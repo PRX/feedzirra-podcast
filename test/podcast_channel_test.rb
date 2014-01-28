@@ -11,4 +11,8 @@ class PodcastChannelTest < MiniTest::Unit::TestCase
   def test_itunes_author
     assert_equal 'Roman Mars', @feed.itunes_author
   end
+
+  def test_itunes_owner
+    assert_equal 'roman_mars@yahoo.com', @feed.itunes_owner.email
+  end
 end
