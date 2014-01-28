@@ -35,6 +35,9 @@ module FeedzirraPodcast
 
       # elements :item, as: :items, class: RSS2Item
 
+      element :"feedburner:info", as: :feedburner_info_uri, value: :uri
+      element :"feedburner:info", as: :feedburner_info_xmlns, value: :"xmlns:feedburner"
+
       attr_accessor :feed_url
 
       def self.able_to_parse?(xml) #:nodoc:
@@ -51,6 +54,10 @@ module FeedzirraPodcast
         Time.parse(last_build_date_string).utc if last_build_date_string.present?
       rescue ArgumentError
         nil
+      end
+
+      def feedburner?
+        !!feedburner_info_xmlns || !!feedburner_info_uri
       end
     end
   end
