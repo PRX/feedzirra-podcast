@@ -24,6 +24,8 @@ The goal is to support all elements common to podcast feeds. Currently not all e
 
 When it makes sense for an element's value to be parsed or tranformed into a non-string object, that will be done. The string value is always preserved, though.
 
+When an element has children, such as `itunes:owner`, you can safely call the children directly (`feed.itunes_owner.email`) even when the feed doesn't include the parent element. You will get `nil` back for both calls to the parent or child
+
 ### Channel
 
 	<link>				feed.link
@@ -70,8 +72,13 @@ When it makes sense for an element's value to be parsed or tranformed into a non
 	<itunes:complete> 	feed.itunes_complete (true, false)
 						feed.itunes_complete_string
 	<itunes:new-feed-url>	feed.itunes_new_feed_url
+	
+	<sy:updatePeriod>	 feed.sy_updatePeriod (:hourly, :daily, etc)
+	<sy:updateFrequency>	feed.sy_updateFrequency (Integer)
+	<sy:updateBase>		feed.sy_updateBase (Time)
 
 	<issn>				feed.issn
+	<network>			feed.network
 
 ### Items
 
@@ -92,6 +99,12 @@ When it makes sense for an element's value to be parsed or tranformed into a non
 						item.enclosure.length
 
 	<comments>			item.comments
+	
+	<dc:creator>		item.dc_creator
+	<dc:created>		item.dc_created (Time)
+	<dc:modified>		item.dc_modified (Time)
+	<dc:replaces>		item.dc_replaces
+	<dc:isReplacedBy>	item.dc_isReplacedBy
 
 ### Helpers
 

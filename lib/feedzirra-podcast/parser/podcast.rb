@@ -23,9 +23,9 @@ module FeedzirraPodcast
 
       # Syndication RSS
 
-      # element :"sy:updatePeriod"
-      # element :"sy:updateFrequency"
-      # element :"sy:updateBase"
+      element :"sy:updatePeriod", as: :sy_update_period_string
+      element :"sy:updateFrequency", as: :sy_update_frequency_string
+      element :"sy:updateBase", as: :sy_update_base_string
 
       # Misc
 
@@ -70,6 +70,28 @@ module FeedzirraPodcast
           false
         end
       end
+
+      def sy_update_period
+        case sy_update_period_string
+          when "hourly" then :hourly
+          when "daily" then :daily
+          when "weekly" then :weekly
+          when "monthly" then :monthly
+          when "yearly" then :yearly
+          else nil
+        end
+      end
+      alias_method :sy_updatePeriod, :sy_update_period
+
+      def sy_update_frequency
+        sy_update_frequency_string.to_i if sy_update_frequency_string
+      end
+      alias_method :sy_updateFrequency, :sy_update_frequency
+
+      def sy_update_base
+        Time.parse(sy_update_base_string)
+      end
+      alias_method :sy_updateBase, :sy_update_base
     end
   end
 end

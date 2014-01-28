@@ -29,6 +29,8 @@ module FeedzirraPodcast
       rescue ArgumentError
         nil
       end
+      alias_method :pub_date, :pubDate
+      alias_method :pubdate, :pubDate
 
       def source
         Struct.new(:title, :url).new(source_title, source_url)

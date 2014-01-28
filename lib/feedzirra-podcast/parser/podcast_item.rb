@@ -22,6 +22,9 @@ module FeedzirraPodcast
 
       element :"dc:creator", as: :dc_creator
       element :"dc:created", as: :dc_created_string
+      element :"dc:modified", as: :dc_modified_string
+      element :"dc:replaces", as: :dc_replaces
+      element :"dc:isReplacedBy", as: :dc_is_replaced_by
 
       # Content
 
@@ -65,6 +68,7 @@ module FeedzirraPodcast
           false
         end
       end
+      alias_method :itunes_isClosedCaptioned, :itunes_is_closed_captioned
 
       def itunes_order
         itunes_order_string.to_f if itunes_order_string.present?
@@ -74,6 +78,16 @@ module FeedzirraPodcast
         Time.parse(dc_created_string).utc if dc_created_string.present?
       rescue ArgumentError
         nil
+      end
+
+      def dc_modified
+        Time.parse(dc_modified_string).utc if dc_modified_string.present?
+      rescue ArgumentError
+        nil
+      end
+
+      def dc_isReplacedBy
+        dc_is_replaced_by
       end
     end
   end
