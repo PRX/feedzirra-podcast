@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["chris@farski.com"]
   spec.description   = %q{Strict RSS 2 podcast parsing with Feedzirra}
   spec.summary       = %q{Feedzirra parser classes strictly for handling podcasts strictly}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/PRX/feedzirra-podcast"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
