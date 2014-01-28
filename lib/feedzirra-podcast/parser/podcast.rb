@@ -30,6 +30,7 @@ module FeedzirraPodcast
       # Misc
 
       element :issn
+      element :network
 
       def itunes_owner
         _email = itunes_owner_object ? itunes_owner_object.email : nil
