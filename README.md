@@ -2,7 +2,7 @@
 
 A set of Feedzirra parsers intended to parse common RSS feeds used for podcasting.
 
-At present, there is no specific attribute (DTD, namespace, etc) that indicates an RSS feed is a podcsat. In general, a feed that uses only standard RSS 2.0 elements is acceptable for representing a podcast. Because of this, `feedzirra-podcast` parsers will
+At present, there is no specific attribute (DTD, namespace, etc) that indicates an RSS feed is a podcsat. In general, a feed that uses only standard RSS 2.0 elements is acceptable for representing a podcast. Because of this, `feedzirra-podcast` parsers will match and parse any RSS feed they see.
 
 Even though there is an RSS 2.0 parser included in this library, it is not explicitly intended to be used to parse any RSS feed. This library is only intended to handle feeds you expect to be podcasts.
 
