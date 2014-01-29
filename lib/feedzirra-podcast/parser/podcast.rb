@@ -93,7 +93,7 @@ module FeedzirraPodcast
       alias_method :sy_updateFrequency, :sy_update_frequency
 
       def sy_update_base
-        Time.parse(sy_update_base_string)
+        Time.parse(sy_update_base_string) if sy_update_base_string.present?
       end
       alias_method :sy_updateBase, :sy_update_base
     end
