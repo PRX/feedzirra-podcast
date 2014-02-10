@@ -1,4 +1,6 @@
 require 'feedzirra-podcast/parser/podcast_item'
+require 'uri'
+require 'open-uri'
 
 module FeedzirraPodcast
   module Parser
@@ -96,6 +98,25 @@ module FeedzirraPodcast
         Time.parse(sy_update_base_string) if sy_update_base_string.present?
       end
       alias_method :sy_updateBase, :sy_update_base
+
+      def networks?(url)
+        if network
+          uri = URI.parse(network)
+
+          if uri
+            @opml ||= uri.read
+
+            if @opml
+              doc = Nokogiri::XML(@opml)
+
+              if doc
+                urls = doc.xpath('//outline').map{|o| o.attribute('xmlUrl').to_s}
+                urls.include?(url)
+              end
+            end
+          end
+        end
+      end
     end
   end
 end
