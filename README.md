@@ -128,4 +128,6 @@ When an element has children, such as `itunes:owner`, you can safely call the ch
 
 ### Helpers
 
-The `feedburner?` method on feed objects will try to tell you if the feed been proxied by Feedburner
+The `feedburner?` method on feed objects will try to tell you if the feed been proxied by Feedburner.
+
+The `networks?` method on feed objects takes a url (`String`) and will check to see if it is included in the feed's `network` OPML whitelist. The passed in url value should only ever be the actual URL that was used to make the request for the data that was parsed. It should never be derived from the feed (such as from the `source` value), since that could easily be spoofed.
