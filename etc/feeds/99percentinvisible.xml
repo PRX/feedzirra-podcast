@@ -8,6 +8,7 @@
     <description>A Tiny Radio Show about Design with Roman Mars</description>
     <lastBuildDate>Mon, 15 Jul 2013 19:22:29 +0000</lastBuildDate>
     <language>en-US</language>
+    <network>http://radiotopia.fm/network.opml</network>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
     <sy:updateBase>2012-01-01T02:00:00+00:00</sy:updateBase>
